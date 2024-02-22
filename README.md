@@ -1,3 +1,6 @@
 # Meu-primeiro-repositorio
 Meu repositorio da faculdade 
-Vitor Hideo 
+ 
+Estou alterando no remoto
+
+Estou alterando local
