@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira</title>
+</head>
+<body>
+
+    <h1>Calculadora financeira</h1>
+
+    <h4>Calcule as perdas das carnes que não possuem um controle de temperatura:</h4>
+
+    Linguiça toscana(em KG): <input type="text" id="ipt_linguica_toscana"> 
+    <br>
+    Pernil dianteiro(em KG): <input type="text" id="ipt_pernil_dianteiro"> 
+    <br>
+    Pernil traseiro(em KG): <input type="text" id="ipt_pernil_traseiro"> 
+    <br>
+    Acém bovino(em KG): <input type="text" id="ipt_acem_bovino"> 
+    <br>
+    Musculo bovino(em KG): <input type="text" id="ipt_musculo_bovino"> 
+    <br>
+    Contrafilé(em KG): <input type="text" id="ipt_contrafile"> 
+    <br>
+    Chã de dentro(em KG): <input type="text" id="ipt_cha_de_dentro"> 
+    <br>
+    Lombo suíno(em KG): <input type="text" id="ipt_lombo_suino"> 
+    <br>
+    Costelinha suína(em KG): <input type="text" id="ipt_costelinha_suina"> 
+    <br>
+    Maçã de peito(em KG): <input type="text" id="ipt_maca_de_peito"> 
+    <br>
+
+    <button onclick="calcular()">Calcular prejuizo</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        //Valores das inputs
+        var linguica = Number(ipt_linguica_toscana.value);
+        var pernil_dianteiro = Number(ipt_pernil_dianteiro.value);
+        var pernil_traseiro = Number(ipt_pernil_traseiro.value);
+        var acem = Number(ipt_acem_bovino.value);
+        var musculo = Number(ipt_musculo_bovino.value);
+        var contrafile = Number(ipt_contrafile.value);
+        var cha = Number(ipt_cha_de_dentro.value);
+        var lombo = Number(ipt_lombo_suino.value);
+        var costelinha = Number(ipt_costelinha_suina.value);
+        var maca = Number(ipt_maca_de_peito.value);
+
+        //Calulo da perda das carnes
+
+        var perda_linguica = linguica * 0.0485;
+        var perda_pernil_dianteiro = pernil_dianteiro * 0.0820;
+        var perda_pernil_traseiro = pernil_traseiro * 0.1235;
+        var perda_acem = acem * 0.1022;
+        var perda_musculo = musculo * 0.1085;
+        var perda_contrafile = contrafile * 0.1123;
+        var perda_cha = cha * 0.1345;
+        var perda_lombo = lombo * 0.1345;
+        var perda_costelinha = costelinha * 0.1478;
+        var perda_maca = maca * 0.1524;
+
+        //Calculo do prejuizo com base do valor das carnes em KG
+
+        var prejuizo_linguica = perda_linguica * 16.98
+        var prejuizo_pernil_dianteiro = pernil_dianteiro * 25.97;
+        var prejuizo_pernil_traseiro = pernil_traseiro * 22.98;
+        var prejuizo_acem = acem * 26.98;
+        var prejuizo_musculo = musculo * 23.98;
+        var prejuizo_contrafile = 42.98;
+        var prejuizo_cha = cha * 39.96;
+        var prejuizo_lombo = lombo * 22.48;
+        var prejuizo_costelinha = costelinha * 21.98;
+        var prejuizo_maca = maca * 37.98;
+
+        var total_carnes_emKG = linguica + pernil_dianteiro + pernil_traseiro + acem + musculo + contrafile + cha + lombo + costelinha + maca;
+
+        var total_perdas = perda_linguica + perda_pernil_dianteiro + perda_pernil_traseiro + perda_acem + perda_musculo + perda_contrafile + perda_cha + perda_lombo + perda_costelinha + perda_maca;
+
+        var total_prejuizo = prejuizo_linguica + prejuizo_pernil_dianteiro + prejuizo_pernil_traseiro + prejuizo_acem + prejuizo_musculo + prejuizo_contrafile + prejuizo_cha + prejuizo_lombo + prejuizo_costelinha + prejuizo_maca;
+
+
+
+        div_mensagem.innerHTML = `Analise da quantidade de perda de carnes e perca financeira: <br> <br>
+        
+        Com o total de ${linguica}KG de linguiça Toscana, a um preço de 16.98R$ e um desperdicio de 4,85%, há uma perca de aproximadamente ${perda_linguica}KG, e um prejuizo financeiro de ${prejuizo_linguica}R$ 
+        <br> 
+        Com o total de ${pernil_dianteiro}KG de Pernil Dianteiro, a um preço de 25.97R$ e um desperdicio de 8,20%, há uma perca de aproximadamente ${perda_pernil_dianteiro}KG, e um prejuizo financeiro de ${prejuizo_pernil_dianteiro}R$ <br>
+        Com o total de ${pernil_traseiro}KG de Pernil Traseiro, a um preço de 22.98R$ e um desperdicio de 12,35%, há uma perca de aproximadamente ${perda_pernil_traseiro}KG, e um prejuizo financeiro de ${prejuizo_pernil_traseiro}R$ <br>
+        Com o total de ${acem}KG de Acém Bovino, a um preço de 26.98R$ e um desperdicio de 10,22%, há uma perca de aproximadamente ${perda_acem}KG, e um prejuizo financeiro de ${prejuizo_acem}R$ 
+        <br>
+        Com o total de ${musculo}KG de Musculo Bovino, a um preço de 23.98R$ e um desperdicio de 10,85%, há uma perca de aproximadamente ${perda_musculo}KG, e um prejuizo financeiro de ${prejuizo_musculo}R$ 
+        <br>
+        Com o total de ${contrafile}KG de Contrafilé, a um preço de 42.98R$ e um desperdicio de 11,23%, há uma perca de aproximadamente ${perda_contrafile}KG, e um prejuizo financeiro de ${prejuizo_contrafile}R$ 
+        <br>
+        Com o total de ${cha}KG de Cha de dentro, a um preço de 39.96R$ e um desperdicio de 13,21%, há uma perca de aproximadamente ${perda_cha}KG, e um prejuizo financeiro de ${prejuizo_cha}R$ 
+        <br>
+        Com o total de ${lombo}KG de Lombo Suíno, a um preço de 22.48R$ e um desperdicio de 13,45%, há uma perca de aproximadamente ${perda_lombo}KG, e um prejuizo financeiro de ${prejuizo_lombo}R$ 
+        <br>
+        Com o total de ${costelinha}KG de Costelinha Suína, a um preço de 21.98R$ e um desperdicio de 14,78%, há uma perca de aproximadamente ${perda_costelinha}KG, e um prejuizo financeiro de ${prejuizo_costelinha}R$ 
+        <br>
+        Com o total de ${maca}KG de Maçã de Peito, a um preço de 37.98R$ e um desperdicio de 15,24%, há uma perca de aproximadamente ${perda_maca}KG, e um prejuizo financeiro de ${prejuizo_maca}R$ 
+        <br> <br> 
+        Com isso podemos concluir que com o total de ${total_carnes_emKG}KG de carne, e com a perda de ${total_perdas}KG de carne, você teve um prejuizo de ${total_prejuizo}R$ `
+
+    }
+</script>
