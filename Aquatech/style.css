@@ -32,3 +32,58 @@ body {
     color: #e3b062;
     align-items: center;
 }
+
+.banner {
+    padding: 40px 0;
+    height: 400px;
+    color: #fff;
+    background-image: url('https://github.com/PedroRCSilva/Imagens-CCO/blob/main/imagens/bg-jelly-fish-para_outras_pags.png?raw=true')
+}
+
+.banner .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%   ;
+}
+
+.banner .container p {
+    font-size: 30px;
+    width: 25%;
+}
+
+.banner .container p span {
+    font-weight: bold;
+}
+
+.social {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.social .container {
+    justify-content: space-between;
+}
+
+.card {
+    width: 150px;
+}
+
+.card img {
+    width: 100px;
+}
+
+.card h4 {
+    font-size: 24px;
+}
+
+.footer {
+    height: 100px;
+    background-color: #32b9cd;
+}
+
+.footer .container {
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
